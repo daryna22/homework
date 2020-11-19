@@ -1,0 +1,47 @@
+* {box-sizing: border-box;}
+body {
+    display: flex; 
+    justify-content: center;
+}
+.cube {
+    display: flex;
+    flex-direction: column;
+}
+.sides {
+    display: flex;
+    flex-direction: row;
+}
+.side {
+    height: 200px;
+    width: 200px;
+}
+.top {
+    background: linear-gradient(to top right, #fefcea, #f1da36);;
+    animation: movetop 2s;
+    animation-fill-mode: forwards;
+}
+.left {
+    background: linear-gradient(to bottom right, #fefcea, #8ec63f);
+    animation: moveleft 2s;
+    animation-fill-mode: forwards;
+}
+.right {
+    background: linear-gradient(to bottom left, #fefcea, #1a2bfa);
+    animation: moveright 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes movetop {
+    0% { transform: translate(0%, 0%) skew(5deg, 5deg);}
+    50% {transform: translate(25%, 0%) rotate(-30deg) skew(10deg, 10deg);}
+    100% {transform: translate(52%, 0%) rotate(-40deg) skew(15deg, 15deg); }
+}
+@keyframes moveleft {
+    0% { transform: rotate(-5deg) skew(-5deg, -5deg) translate(-20%, -20%);}
+    50% { transform: rotate(-10deg) skew(-10deg, -10deg) translate(-40%, -40%);}
+    100% { transform: rotate(-10deg) skew(-15deg, -15deg) translate(-60%, -60%);}
+}
+@keyframes moveright {
+    0% { transform: rotate( 5deg) skew(5deg, 5deg) translate(-1%, -15%);}
+    50% { transform: rotate(10deg) skew(10deg, 10deg) translate(-2%, -30%);}
+    100% { transform: rotate(20deg) skew(15deg, 15deg) translate(-3%, -40%);}
+}
